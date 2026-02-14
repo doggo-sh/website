@@ -1,0 +1,75 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { GitHubIcon } from 'nextra/icons'
+import { Footer, Layout, Navbar } from 'nextra-theme-docs'
+import { Head } from 'nextra/components'
+import { getPageMap } from 'nextra/page-map'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Doggo',
+    template: '%s | Doggo'
+  },
+  description: 'Cross-platform terminal emulator with vertical tabs, split panes, and smart workflows.'
+}
+
+const navbar = (
+  <Navbar
+    className="gap-5"
+    logo={
+      <span className="inline-flex items-center gap-2">
+        <Image src="/images/doggo.png" alt="Doggo logo" width={26} height={26} />
+        <span className="text-base font-extrabold tracking-[0.01em]">Doggo</span>
+      </span>
+    }
+  >
+    <div className="ms-2 hidden items-center gap-1 md:flex">
+      <Link
+        href="/docs/"
+        className="rounded-lg px-3 py-2 text-sm font-semibold tracking-[0.01em] transition hover:bg-black/10 dark:hover:bg-white/10"
+      >
+        Docs
+      </Link>
+      <Link
+        href="/download/"
+        className="rounded-lg px-3 py-2 text-sm font-semibold tracking-[0.01em] transition hover:bg-black/10 dark:hover:bg-white/10"
+      >
+        Download
+      </Link>
+      <a
+        className="inline-flex items-center justify-center rounded-lg p-2 transition hover:bg-black/10 dark:hover:bg-white/10"
+        href="https://github.com/jvz-github/doggo-sh"
+        aria-label="GitHub repository"
+      >
+        <GitHubIcon height="20" />
+      </a>
+    </div>
+  </Navbar>
+)
+
+const footer = <Footer>MIT {new Date().getFullYear()} © Doggo Contributors.</Footer>
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" dir="ltr" suppressHydrationWarning>
+      <Head>
+        <meta name="theme-color" content="#0b1220" />
+      </Head>
+      <body className="min-h-screen bg-[radial-gradient(1000px_400px_at_15%_-10%,rgba(20,184,166,0.12),transparent_60%),radial-gradient(900px_420px_at_85%_-20%,rgba(34,211,238,0.12),transparent_60%)]">
+        <Layout
+          navbar={navbar}
+          footer={footer}
+          pageMap={await getPageMap()}
+          docsRepositoryBase="https://github.com/jvz-github/doggo-sh/tree/main"
+          editLink={null}
+          feedback={{ content: null }}
+          sidebar={{ defaultMenuCollapseLevel: 1 }}
+        >
+          {children}
+        </Layout>
+      </body>
+    </html>
+  )
+}
