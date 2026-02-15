@@ -1,0 +1,56 @@
+---
+title: Doggo
+type: page
+display: hidden
+theme:
+  layout: full
+  breadcrumb: false
+  sidebar: false
+  toc: false
+  pagination: false
+  copyPage: false
+---
+
+
+  <h1 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">Doggo is a modern terminal built for fast engineering workflows.</h1>
+
+  <p className="mb-6 max-w-3xl text-lg">Vertical tabs, split panes, project switching, and git-aware controls in one desktop app. Built for teams that live in the shell.</p>
+
+  <div className="mb-8 flex flex-wrap gap-3">
+    <a className="rounded-md bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400" href="/docs/">
+      Read docs
+    </a>
+    <a className="rounded-md border border-black/20 bg-white/80 px-4 py-2 text-sm font-semibold transition hover:bg-white dark:border-white/15 dark:bg-white/5 dark:hover:bg-white/10" href="/docs/installation/">
+      Install
+    </a>
+  </div>
+
+  <img src="/images/screenshot.png" alt="Doggo screenshot" className="w-full rounded-xl border border-black/10 shadow-2xl shadow-black/10 dark:border-white/10" />
+
+## Why Doggo
+
+<div className="not-prose mt-4 grid gap-4 md:grid-cols-3">
+  <div className="rounded-lg border border-black/10 bg-white/75 p-4 shadow-sm dark:border-white/10 dark:bg-white/5">
+    <h3 className="text-lg font-bold">Tabbed workflows</h3>
+    <p className="mt-2 text-sm">Vertical tabs, drag-and-drop ordering, and restore closed tabs instantly.</p>
+  </div>
+
+  <div className="rounded-lg border border-black/10 bg-white/75 p-4 shadow-sm dark:border-white/10 dark:bg-white/5">
+    <h3 className="text-lg font-bold">Powerful splits</h3>
+    <p className="mt-2 text-sm">Split terminals with keyboard-first navigation and flexible pane resizing.</p>
+  </div>
+
+  <div className="rounded-lg border border-black/10 bg-white/75 p-4 shadow-sm dark:border-white/10 dark:bg-white/5">
+    <h3 className="text-lg font-bold">Git and AI built in</h3>
+    <p className="mt-2 text-sm">Track branch status, run git actions, and generate commands in AI mode.</p>
+  </div>
+</div>
+
+## Quick Start
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+See the full setup guide in [Installation](/docs/installation/).
